@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- odata -->
+<odoo>
+    <data>
+        <!-- Add you code here -->
+        <!-- oact -->
+        <!-- linggajati.training.category action window -->
+        <record id="linggajati_menu_category_action" model="ir.actions.act_window">
+            <field name="name">Kategori Kursus</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">linggajati.training.category</field>
+            <field name="view_mode">tree,form</field>
+            <!-- <field name="view_type">form</field> -->
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                    Yuk buat data kategori
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                </p>
+            </field>
+        </record>
+
+        <!-- otree model.name tree view -->
+        <record id="linggajati_training_category_view_tree" model="ir.ui.view">
+            <field name="name">linggajati.training.category.view.tree</field>
+            <field name="model">linggajati.training.category</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- ofield -->
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- oform -->
+        <!-- model.name form view -->
+        <record id="linggajati_training_category_view_form" model="ir.ui.view">
+            <field name="name">linggajati.training.category.view.form</field>
+            <field name="model">linggajati.training.category</field>
+            <field name="arch" type="xml">
+                <form string="Kategori Training">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="active"/>
+                            </group>
+                        </group>
+
+                        <!-- onote -->
+                        <notebook>
+                            <page string="Deskripsi" name="deskripsi">
+                                <field name="description"/>
+                            </page>
+                            <page string="Data Kursus" name='data_course'>
+                                <field name="course_ids">
+                                    <tree editable="bottom">
+                                            <field name="name"/>
+                                            <field name="description"/>
+                                            <field name="active"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- osearch linggajati.training.category search view -->
+        <record id="linggajati_training_category_view_search" model="ir.ui.view">
+            <field name="name">linggajati.training.category.view.search</field>
+            <field name="model">linggajati.training.category</field>
+            <field name="arch" type="xml">
+                <search string="Search Description">
+                    <!-- Add your fields here -->
+                    <field name="name"/>
+                    <field name="description"/>
+                    <filter string="Data Nonaktif" name="filter_nonaktif" domain="[('active', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+        <!-- omenu -->
+        <!-- sequence, angka kecil diatas, besar dibawah -->
+        <menuitem id="linggajati_training_menu_act" name="Kategori Kursus" parent="linggajati_training_menu_categ" action="linggajati_menu_category_action" sequence="10"/>
+    </data>
+</odoo>

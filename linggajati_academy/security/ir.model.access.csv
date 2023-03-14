@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_linggajati_training_category,access_linggajati_training_category,model_linggajati_training_category,,1,1,1,1
+access_linggajati_course,access_linggajati_course,model_linggajati_course,,1,1,1,1
+access_linggajati_session,access_linggajati_session,model_linggajati_session,,1,1,1,1
+access_linggajati_session_attendee,access_linggajati_session_attendee,model_linggajati_session_attendee,,1,1,1,1

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- Add you code here -->
+        <menuitem id="linggajati_training_menu_root" name="Academy" sequence="20"/>
+        <menuitem id="linggajati_training_menu_categ" name="Master Data" parent="linggajati_training_menu_root" sequence="20"/>
+    </data>
+</odoo>

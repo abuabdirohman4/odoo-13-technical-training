@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <!-- Add you code here -->
+        <!-- linggajati.course action window -->
+        <record id="linggajati_course_action" model="ir.actions.act_window">
+            <field name="name">Data Course</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">linggajati.course</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->
+                </p><p>
+                    <!-- More details about what a user can do with this object will be OK --> 
+                </p>
+            </field>
+        </record>
+
+        <!-- linggajati.course tree view -->
+        <record id="linggajati_course_view_tree" model="ir.ui.view">
+            <field name="name">linggajati.course.view.tree</field>
+            <field name="model">linggajati.course</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Add your fields here -->
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="category_id"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- linggajati.course form view -->
+        <record id="linggahati_course_view_form" model="ir.ui.view">
+            <field name="name">linggajati.course.view.form</field>
+            <field name="model">linggajati.course</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <!-- Add your fields here -->
+                            <group>
+                                <field name="name"/>
+                                <field name="category_id"/>
+                            </group>
+                            <group>
+                                <field name="active"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page string="Deskripsi" name="des">
+                                <field name="description"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- linggajati.course search view -->
+        <record id="linggajati_course_view_search" model="ir.ui.view">
+            <field name="name">linggajati.course.view.search</field>
+            <field name="model">linggajati.course</field>
+            <field name="arch" type="xml">
+                <search string="Search Description">
+                    <!-- Add your fields here -->
+                    <field name="name"/>
+                    <field name="category_id"/>
+                    <field name="description"/>
+
+                    <filter name='filter_nonactive' string="Data Nonaktif" domain="[('active', '=', False)]"/>
+
+                    <group expand="0" string="Group By">
+                        <filter string="Kategori" name="kategori" domain="[]" context="{'group_by': 'category_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="linggajati_course_menu_act" name="Data Kursus" parent="linggajati_training_menu_categ" action="linggajati_course_action" sequence="20"/>
+    </data>
+</odoo>
