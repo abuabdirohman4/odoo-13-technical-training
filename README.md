@@ -81,8 +81,12 @@ and then add this code at the file
 ```
 [options]
 addons_path = ./odoo/addons, extra-addons
-# Use this for spesific port
-# http_port =
+# db_host = False
+# db_port = 5432
+# db_user = odoo
+# db_password = False
+# db_filter = live
+# http_port = 8069
 ```
 
 ## Running Odoo
