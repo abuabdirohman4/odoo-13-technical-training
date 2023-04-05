@@ -1,2 +1,8 @@
 odoo
 venv
+
+# For module odoo
+# git rm -r --cached .
+# git rm -r --cached extra-addons/technical_academy/
+extra-addons/**/*.pyc
+extra-addons/**/__pycache__/*
