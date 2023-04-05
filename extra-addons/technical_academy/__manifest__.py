@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Technical Training",
+    'name': "Technical Academy",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
