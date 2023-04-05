@@ -88,6 +88,7 @@ addons_path = ./odoo/addons, extra-addons
 # db_filter = live
 # http_port = 8069
 ```
+Note : For first running app, don't including the extra-addons, that would make error with postgre
 
 ## Running Odoo
 ```
