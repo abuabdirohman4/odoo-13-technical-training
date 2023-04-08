@@ -30,11 +30,15 @@
 
             </p>
         </field>
-        <field name="context">{
+        <!-- <field name="context">{
             'default_is_instructor': True,
             'search_default_filter_pengajar': True
+        } -->
+        <field name="context">{
+            'default_is_instructor': True,
         }
         </field>
+        <field name="domain">[('is_instructor', '=', True)]</field>
     </record>
 
     <!-- This Menu Item must have a parent and an action -->
