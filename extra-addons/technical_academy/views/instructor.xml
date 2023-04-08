@@ -1,0 +1,25 @@
+<data>
+    <!-- res.partner action window -->
+    <record id="res_partner_instuctor_action" model="ir.actions.act_window">
+        <field name="name">Pengajar</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+            </p>
+            <p>
+                <!-- More details about what a user can do with this object will be OK -->
+
+            </p>
+        </field>
+        <field name="context">{
+            'default_is_instructor': True,
+        }
+        </field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="instructor_menu_act" name="Pengajar" parent="tech_master_data_menu_categ" action="res_partner_instuctor_action" sequence="30"/>
+</data>
