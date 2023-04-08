@@ -58,6 +58,21 @@
         </field>
     </record>
 
+    <!-- tech.course.category search view -->
+    <record id="tech_course_category_view_search" model="ir.ui.view">
+        <field name="name">tech.course.category.view.search</field>
+        <field name="model">tech.course.category</field>
+        <field name="arch" type="xml">
+            <search string="Search Description">
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="description"/>
+
+                <filter string="Data Nonaktif" name="filter_nonaktif" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
     <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
     <menuitem id="tech_academy_menu_root" name="Academy" sequence="10"/>
     <!-- This Menu Item Must have a parent -->
