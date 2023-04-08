@@ -1,0 +1,21 @@
+<data>
+    <!-- tech_course action window -->
+    <record id="tech_course_action" model="ir.actions.act_window">
+        <field name="name">Data Kursus</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">tech.course</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                <!-- Add Text Here -->
+            </p>
+            <p>
+                <!-- More details about what a user can do with this object will be OK -->
+
+            </p>
+        </field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="tech_course_menu_act" name="Data Kursus" parent="tech_master_data_menu_categ" action="tech_course_action" sequence="20"/>
+</data>
