@@ -55,6 +55,9 @@
                         <page string='Deskripsi' name="desc">
                             <field name="description"/>
                         </page>
+                        <page string="Data Peserta" name="data_peserta">
+                            <field name="attendee_ids"/>
+                        </page>
                     </notebook>
                 </sheet>
             </form>
