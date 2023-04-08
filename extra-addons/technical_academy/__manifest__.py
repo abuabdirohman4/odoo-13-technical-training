@@ -30,6 +30,7 @@
         'views/menu.xml',
         'views/category.xml',
         'views/course.xml',
+        'views/partner.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
