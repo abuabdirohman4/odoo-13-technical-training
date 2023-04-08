@@ -1,10 +1,26 @@
 <data>
+    <!-- res.partner search view -->
+    <record id="pengajar_view_search" model="ir.ui.view">
+        <field name="name">res.partner.view.search</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <search string="Search Description">
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="email"/>
+
+                <filter name="filter_pengajar" string="Pengajar" domain="[('is_instructor', '=', True)]"/>
+            </search>
+        </field>
+    </record>
+
     <!-- res.partner action window -->
     <record id="res_partner_instuctor_action" model="ir.actions.act_window">
         <field name="name">Pengajar</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">res.partner</field>
         <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="pengajar_view_search"/>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
                 <!-- Add Text Here -->
@@ -16,6 +32,7 @@
         </field>
         <field name="context">{
             'default_is_instructor': True,
+            'search_default_filter_pengajar': True
         }
         </field>
     </record>
