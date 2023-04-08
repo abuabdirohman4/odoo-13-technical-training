@@ -33,6 +33,7 @@
         'views/partner.xml',
         'views/instructor.xml',
         'views/session.xml',
+        'views/student.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
