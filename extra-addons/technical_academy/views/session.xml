@@ -1,0 +1,20 @@
+<data noupdate="0">
+    <!-- tech.session action window -->
+    <record id="tech_session_action" model="ir.actions.act_window">
+        <field name="name">Sesi Kursus</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">tech.session</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Buat Sesi Batu...
+            </p>
+            <p>
+                <!-- More details about what a user can do with this object will be OK -->
+            </p>
+        </field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="tech_session_menu_act" name="Sesi Kursus" parent="tech_academy_menu_root" action="tech_session_action" sequence="9"/>
+</data>
