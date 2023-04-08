@@ -7,3 +7,4 @@ class Category(models.Model):
     name = fields.Char(string='Nama Kategori')
     description = fields.Text(string='Deskripsi')
     active = fields.Boolean(string='Active', default=True)
+    course_ids = fields.One2many(comodel_name='tech.course', inverse_name='category_id', string='Data Kursus')

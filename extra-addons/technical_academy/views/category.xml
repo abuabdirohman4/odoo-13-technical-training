@@ -52,6 +52,9 @@
                         <page string="Deskripsi" name="deskripsi">
                             <field name="description"/>
                         </page>
+                        <page string="Data kursus" name="data_course">
+                            <field name="course_ids"/>
+                        </page>
                     </notebook>
                 </sheet>
             </form>
