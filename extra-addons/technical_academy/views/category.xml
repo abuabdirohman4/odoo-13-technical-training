@@ -53,7 +53,13 @@
                             <field name="description"/>
                         </page>
                         <page string="Data kursus" name="data_course">
-                            <field name="course_ids"/>
+                            <field name="course_ids">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="description"/>
+                                    <field name="active"/>
+                                </tree>
+                            </field>
                         </page>
                     </notebook>
                 </sheet>
@@ -75,7 +81,7 @@
             </search>
         </field>
     </record>
-    
+
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="tech_course_category_menu_act" name="Kategori Kursus" parent="tech_master_data_menu_categ" action="tech_course_category_action" sequence="10"/>
 </data>
