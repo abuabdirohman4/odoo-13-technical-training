@@ -1,4 +1,4 @@
-<data noupdate="0">
+<data>
     <!-- tech.session action window -->
     <record id="tech_session_action" model="ir.actions.act_window">
         <field name="name">Sesi Kursus</field>
@@ -12,6 +12,72 @@
             <p>
                 <!-- More details about what a user can do with this object will be OK -->
             </p>
+        </field>
+    </record>
+
+    <!-- tech.session tree view -->
+    <record id="tech_session_view_tree" model="ir.ui.view">
+        <field name="name">tech.session.view.tree</field>
+        <field name="model">tech.session</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="session_date"/>
+                <field name="course_id"/>
+                <field name="instructor_id"/>
+                <field name="session_date"/>
+                <field name="description"/>
+                <field name="min_attendee"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- tech.session form view -->
+    <record id="tech_session_view_form" model="ir.ui.view">
+        <field name="name">tech.session.view.form</field>
+        <field name="model">tech.session</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="course_id"/>
+                            <field name="instructor_id"/>
+                        </group>
+                        <group>
+                            <field name="session_date"/>
+                            <field name="min_attendee"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string='Deskripsi' name="desc">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- tech.session search view -->
+    <record id="tech_session_view_search" model="ir.ui.view">
+        <field name="name">tech.session.view.search</field>
+        <field name="model">tech.session</field>
+        <field name="arch" type="xml">
+            <search string="Search Description">
+                <field name="name"/>
+                <field name="course_id"/>
+                <field name="instructor_id"/>
+                <field name="description"/>
+
+                <!-- <filter name="filter_nonactive" string="Nonaktif" domain="[('active', '=', False)]"/> -->
+                <group expand="0" string="Group By">
+                    <filter string="Kursus" name="group_kursus" domain="[]" context="{'group_by': 'course_id'}"/>
+                    <filter string="Pengajar" name="group_pengajars" domain="[]" context="{'group_by': 'instructor_id'}"/>
+                </group>
+            </search>
         </field>
     </record>
 

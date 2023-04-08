@@ -9,5 +9,5 @@ class Session(models.Model):
     # instructor_id = fields.Many2one(comodel_name='res.partner', string='Pengajar')
     instructor_id = fields.Many2one(comodel_name='res.partner', string='Pengajar', domain="[('is_instructor', '=', True)]")
     session_date = fields.Date(string='Tanggal', default=fields.Date.today)
-    min_attendance = fields.Integer(string='Minimal', default=0, required=True)
+    min_attendee = fields.Integer(string='Minimal', default=0, required=True)
     description = fields.Text(string='Deskripsi')
