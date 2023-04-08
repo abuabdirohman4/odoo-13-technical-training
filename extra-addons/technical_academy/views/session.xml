@@ -56,7 +56,13 @@
                             <field name="description"/>
                         </page>
                         <page string="Data Peserta" name="data_peserta">
-                            <field name="attendee_ids"/>
+                            <field name="attendee_ids">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="student_id"/>
+                                    <field name="description"/>
+                                </tree>
+                            </field>
                         </page>
                     </notebook>
                 </sheet>
