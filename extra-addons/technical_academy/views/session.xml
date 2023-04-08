@@ -28,7 +28,7 @@
                 <field name="instructor_id"/>
                 <field name="session_date"/>
                 <field name="description"/>
-                <field name="min_attendee"/>
+                <field name="state"/>
             </tree>
         </field>
     </record>
@@ -38,7 +38,10 @@
         <field name="name">tech.session.view.form</field>
         <field name="model">tech.session</field>
         <field name="arch" type="xml">
-            <form string="">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done,cancel"/>
+                </header>
                 <sheet>
                     <group>
                         <group>

@@ -12,6 +12,11 @@ class Session(models.Model):
     min_attendee = fields.Integer(string='Minimal', default=0, required=True)
     description = fields.Text(string='Deskripsi')
     attendee_ids = fields.One2many(comodel_name='tech.session.attendee', inverse_name='session_id', string='Data Peserta')
+    state = fields.Selection(string='State', selection=[
+        ('draft', 'Draft'), 
+        ('done', 'Done'),
+        ('cancel', 'Cancel'),
+    ], default='draft', required=True, readonly=True)
 
 class SessionAttendee(models.Model):
     _name = 'tech.session.attendee'
