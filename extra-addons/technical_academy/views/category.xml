@@ -1,0 +1,28 @@
+<data>
+    <!-- tech.course.category action window -->
+    <record id="tech_course_category_action" model="ir.actions.act_window">
+        <field name="name">Kategori Kursus</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">tech.course.category</field>
+        <field name="view_mode">tree,form</field>
+        <!-- <field name="view_type">form</field> -->
+        <!-- <field name="domain">[]</field>
+        <field name="context">{}</field> -->
+        <!-- <field name="target">{current}</field> -->
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Yuk buat data kategori...
+            </p>
+            <p>
+                <!-- More details about what a user can do with this object will be OK -->
+            </p>
+        </field>
+    </record>
+
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="tech_academy_menu_root" name="Academy" sequence="10"/>
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="tech_master_data_menu_categ" name="Master Data" parent="tech_academy_menu_root" sequence="10"/>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="tech_course_category_menu_act" name="Kategori Kursus" parent="tech_master_data_menu_categ" action="tech_course_category_action" sequence="10"/>
+</data>

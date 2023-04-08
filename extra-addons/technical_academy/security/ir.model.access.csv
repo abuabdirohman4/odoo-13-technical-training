@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_technical_training_technical_training,technical_training.technical_training,model_technical_training_technical_training,base.group_user,1,1,1,1
+access_tech_course_category,access_tech_course_category,model_tech_course_category,base.group_user,1,1,1,1
+access_tech_course_category,access_tech_course_category_umum,model_tech_course_category,base.group_user,1,1,1,0
