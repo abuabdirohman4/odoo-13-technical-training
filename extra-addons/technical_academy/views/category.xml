@@ -32,6 +32,32 @@
         </field>
     </record>
 
+    <!-- tech_course_category form view -->
+    <record id="tech_course_category_view_form" model="ir.ui.view">
+        <field name="name">tech_course_category.view.form</field>
+        <field name="model">tech.course.category</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Deskripsi" name="deskripsi">
+                            <field name="description"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
     <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
     <menuitem id="tech_academy_menu_root" name="Academy" sequence="10"/>
     <!-- This Menu Item Must have a parent -->
