@@ -1,4 +1,17 @@
 <data>
+    <!-- res.partner tree view -->
+    <record id="pengajar_view_tree" model="ir.ui.view">
+        <field name="name">res.partner.view.tree</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+
     <!-- res.partner search view -->
     <record id="pengajar_view_search" model="ir.ui.view">
         <field name="name">res.partner.view.search</field>
@@ -21,6 +34,7 @@
         <field name="res_model">res.partner</field>
         <field name="view_mode">tree,form</field>
         <field name="search_view_id" ref="pengajar_view_search"/>
+        <field name="view_id" ref="pengajar_view_tree"/>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
                 <!-- Add Text Here -->
