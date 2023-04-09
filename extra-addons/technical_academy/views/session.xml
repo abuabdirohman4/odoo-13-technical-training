@@ -28,6 +28,7 @@
                 <field name="instructor_id"/>
                 <field name="session_date"/>
                 <field name="description"/>
+                <field name="taken_seats" widget="progressbar"/>
                 <field name="state"/>
             </tree>
         </field>
@@ -58,6 +59,7 @@
                                 'readonly': [('state', '!=', 'draft')],
                                 'invisible': [('state', '!=', 'draft')],
                             }"/>
+                            <field name="taken_seats" widget="progressbar"/>
                         </group>
                     </group>
                     <notebook>

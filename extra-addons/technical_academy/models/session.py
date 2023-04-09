@@ -19,6 +19,15 @@ class Session(models.Model):
         ('cancel', 'Cancel'),
     ], default='draft', required=True, readonly=True)
 
+    # taken_seats = fields.Integer(string='Jumlah Peserta Terdaftar', compute="_compute_taken_seats")
+    taken_seats = fields.Float(string='Jumlah Peserta Terdaftar', compute="_compute_taken_seats")
+    def _compute_taken_seats(self):
+        for record in self:
+            if not record.min_attendee:
+                record.taken_seats = 0.0
+            else: 
+                record.taken_seats = 100.0 * (len(record.attendee_ids) / record.min_attendee)
+
     def action_done(self):
         # validasi jika ada
         self.write({'state': 'done'})
