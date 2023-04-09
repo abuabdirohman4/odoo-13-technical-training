@@ -18,7 +18,7 @@ class Session(models.Model):
         ('done', 'Done'),
         ('cancel', 'Cancel'),
     ], default='draft', required=True, readonly=True)
-    taken_seats = fields.Float(string='Jumlah Peserta Terdaftar', compute="_compute_taken_seats")
+    taken_seats = fields.Float(string='Jumlah Peserta Terdaftar', compute="_compute_taken_seats", store=True)
 
     @api.depends('attendee_ids', 'min_attendee')
     def _compute_taken_seats(self):
