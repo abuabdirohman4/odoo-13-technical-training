@@ -13,8 +13,11 @@ class SessionWIzard(models.TransientModel):
     def gen_attendee(self):
         data_to_save = []
         if self.student_ids:
-            data_to_save = [(0, 0, {'name': '1234', 'student_id': x.id,}) for x in self.student_ids]
-        # create to attendee session
+            # Pythonic (Cara Mentor)
+            # data_to_save = [(0, 0, {'name': '1234', 'student_id': x.id,}) for x in self.student_ids]
+            for student in self.student_ids:
+                data_to_save.append((0, 0,{'name': '1234', 'student_id': student.id}))
+
         if data_to_save:
             self.session_id.attendee_ids = data_to_save
         
