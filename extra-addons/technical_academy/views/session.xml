@@ -40,10 +40,10 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="action_done" type="object" string="Done" class="btn-primary"/>
-                    <button name="action_cancel" type="object" string="Cancel"/>
-                    <button name="action_draft" type="object" string="Reset to Draft"/>
-                    <field name="state" widget="statusbar" statusbar_visible="draft,done,cancel"/>
+                    <button name="action_done" type="object" string="Done" class="btn-success" states="draft"/>
+                    <button name="action_cancel" type="object" string="Cancel" class="btn-secondary" states="draft"/>
+                    <button name="action_draft" type="object" string="Reset to Draft" class="btn-primary" states="done"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
                 </header>
                 <sheet>
                     <group>
