@@ -1,4 +1,4 @@
-from odoo import models, fields, _
+from odoo import models, fields, _, api
 from odoo.exceptions import UserError
 
 class Session(models.Model):
@@ -18,9 +18,9 @@ class Session(models.Model):
         ('done', 'Done'),
         ('cancel', 'Cancel'),
     ], default='draft', required=True, readonly=True)
-
-    # taken_seats = fields.Integer(string='Jumlah Peserta Terdaftar', compute="_compute_taken_seats")
     taken_seats = fields.Float(string='Jumlah Peserta Terdaftar', compute="_compute_taken_seats")
+
+    @api.depends('attendee_ids', 'min_attendee')
     def _compute_taken_seats(self):
         for record in self:
             if not record.min_attendee:
