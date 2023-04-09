@@ -1,0 +1,16 @@
+<data>
+    <report id="report_session" model="tech.session" string="Session Report" name="technical_academy.report_session_view" file="technical_academy.report_session_view" report_type="qweb-pdf"/>
+    <!-- report_type="qweb-pdf" -->
+
+    <template id="report_session_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h1 class="text-center" t-esc="doc.name"/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</data>
