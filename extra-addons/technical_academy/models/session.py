@@ -21,6 +21,16 @@ class Session(models.Model):
     taken_seats = fields.Float(string='Jumlah Peserta Terdaftar', compute="_compute_taken_seats", store=True)
     email = fields.Char(string='Email Pengajar', related="instructor_id.email")
 
+    @api.onchange('min_attendee')
+    def _onchange_min_attendee(self):
+        if self.min_attendee < 0:
+            return {
+                'warning': {
+                    'title': "Tidak Valud!!!",
+                    'message': "minimal peserta tidak boleh minus",
+                },
+            }
+
     @api.depends('attendee_ids', 'min_attendee')
     def _compute_taken_seats(self):
         for record in self:
