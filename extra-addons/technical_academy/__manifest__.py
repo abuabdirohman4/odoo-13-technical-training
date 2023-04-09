@@ -34,6 +34,7 @@
         'views/instructor.xml',
         'views/session.xml',
         'views/student.xml',
+        'wizard/generate_attendee.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
