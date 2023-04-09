@@ -11,4 +11,11 @@ class SessionWIzard(models.TransientModel):
     student_ids = fields.Many2many(comodel_name='res.partner', string='Siswa', domain="[('is_student', '=', True)]")
 
     def gen_attendee(self):
-        pass
+        data_to_save = []
+        if self.student_ids:
+            data_to_save = [(0, 0, {'name': '1234', 'student_id': x.id,}) for x in self.student_ids]
+        # create to attendee session
+        if data_to_save:
+            self.session_id.attendee_ids = data_to_save
+        
+        return {}
