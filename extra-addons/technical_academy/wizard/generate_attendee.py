@@ -11,6 +11,10 @@ class SessionWIzard(models.TransientModel):
     student_ids = fields.Many2many(comodel_name='res.partner', string='Siswa', domain="[('is_student', '=', True)]")
 
     def gen_attendee(self):
+        # Debugging
+        # import ipdb
+        # ipdb.set_trace()
+
         data_to_save = []
         if self.student_ids:
             # Pythonic (Cara Mentor)
