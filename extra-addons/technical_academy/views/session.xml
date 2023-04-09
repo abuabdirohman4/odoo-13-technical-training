@@ -13,14 +13,14 @@
                 <!-- More details about what a user can do with this object will be OK -->
             </p>
         </field>
-    </record>
+    </record> 
 
     <!-- tech.session tree view -->
     <record id="tech_session_view_tree" model="ir.ui.view">
         <field name="name">tech.session.view.tree</field>
         <field name="model">tech.session</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree decoration-danger="state == 'draft'" decoration-success="state == 'done'">
                 <!-- Add your fields here -->
                 <field name="name"/>
                 <field name="session_date"/>
