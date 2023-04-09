@@ -1,4 +1,5 @@
-from odoo import models, fields
+from odoo import models, fields, _
+from odoo.exceptions import UserError
 
 class Session(models.Model):
     _name = 'tech.session'
@@ -27,6 +28,13 @@ class Session(models.Model):
 
     def action_draft(self):
         self.write({'state': 'draft'})
+
+    def unlink(self):
+        for record in self:
+            # if record.state not in ('draft', 'cancel'):
+            if record.state != 'draft':
+                raise UserError(_('Tidak bisa hapus sesi yang tidak dalam draft'))
+        return super(Session, self).unlink()
 
 class SessionAttendee(models.Model):
     _name = 'tech.session.attendee'
