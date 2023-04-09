@@ -48,21 +48,21 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="name"/>
-                            <field name="course_id"/>
-                            <field name="instructor_id"/>
+                            <field name="name" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="course_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="instructor_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                         </group>
                         <group>
-                            <field name="session_date"/>
-                            <field name="min_attendee"/>
+                            <field name="session_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            <field name="min_attendee" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                         </group>
                     </group>
                     <notebook>
                         <page string='Deskripsi' name="desc">
-                            <field name="description"/>
+                            <field name="description" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                         </page>
                         <page string="Data Peserta" name="data_peserta">
-                            <field name="attendee_ids">
+                            <field name="attendee_ids" attrs="{'readonly': [('state', '!=', 'draft')]}">
                                 <tree editable="bottom">
                                     <field name="name"/>
                                     <field name="student_id"/>
