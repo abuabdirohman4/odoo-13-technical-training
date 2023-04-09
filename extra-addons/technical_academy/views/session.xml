@@ -13,7 +13,7 @@
                 <!-- More details about what a user can do with this object will be OK -->
             </p>
         </field>
-    </record> 
+    </record>
 
     <!-- tech.session tree view -->
     <record id="tech_session_view_tree" model="ir.ui.view">
@@ -40,6 +40,9 @@
         <field name="arch" type="xml">
             <form>
                 <header>
+                    <button name="action_done" type="object" string="Done" class="btn-primary"/>
+                    <button name="action_cancel" type="object" string="Cancel"/>
+                    <button name="action_draft" type="object" string="Reset to Draft"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,done,cancel"/>
                 </header>
                 <sheet>

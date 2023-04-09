@@ -18,6 +18,16 @@ class Session(models.Model):
         ('cancel', 'Cancel'),
     ], default='draft', required=True, readonly=True)
 
+    def action_done(self):
+        # validasi jika ada
+        self.write({'state': 'done'})
+
+    def action_cancel(self):
+        self.write({'state': 'cancel'})
+
+    def action_draft(self):
+        self.write({'state': 'draft'})
+
 class SessionAttendee(models.Model):
     _name = 'tech.session.attendee'
     _description = 'Peserta di sesi kursus'
