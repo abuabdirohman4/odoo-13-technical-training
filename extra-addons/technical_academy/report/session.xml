@@ -7,7 +7,57 @@
             <t t-foreach="docs" t-as="doc">
                 <t t-call="web.external_layout">
                     <div class="page">
-                        <h1 class="text-center" t-esc="doc.name"/>
+                        <!-- <h1 class="text-center" t-esc="doc.name"/> -->
+                        <h1 class="text-center" t-field="doc.name"/>
+
+                        <table class="table table-borderless">
+                            <tr>
+                                <td>Kursus</td>
+                                <td>
+                                    <span t-field="doc.course_id"/>
+                                </td>
+                                <td>Tanggal</td>
+                                <td>
+                                    <span t-field="doc.session_date"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pengajar</td>
+                                <td>
+                                    <span t-field="doc.instructor_id"/>
+                                </td>
+                                <td>Minimal</td>
+                                <td>
+                                    <span t-field="doc.min_attendee"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table class="table table-bordered table-stripped">
+                            <tr>
+                                <th>No</th>
+                                <th>Nomor Pendaftaran</th>
+                                <th>Nama Siswa</th>
+                            </tr>
+                            <t t-set="no" t-value="1"/>
+                            <!-- https://www.odoo.com/documentation/13.0/developer/reference/javascript/qweb.html#setting-variables -->
+                            
+                            <tr t-foreach="doc.attendee_ids" t-as="att">
+                                <td>
+                                    <span t-esc="no"/>
+                                </td>
+                                <td>
+                                    <span t-field="att.name"/>
+                                </td>
+                                <td>
+                                    <span t-field="att.student_id"/>
+                                </td>
+                                <t t-set="no" t-value="no + 1"/>
+                            </tr>
+                        </table>
+
+                        <hr/>
+                        <p>TTD</p>
                     </div>
                 </t>
             </t>
